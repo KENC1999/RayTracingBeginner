@@ -2,11 +2,15 @@
 #define __hittable_H__
 #include<Eigen/Dense>
 #include"ray.h"
+#include"predefine.h"
 using namespace Eigen;
+
+class material;
 
 struct hit_record{
 	Vector4d pos;
 	Vector4d norm;
+	shared_ptr <material> mat_ptr;
 	double t;
 	bool front_face;
 	inline void set_face_normal(const ray& r, const Vector4d& outward_normal) {
