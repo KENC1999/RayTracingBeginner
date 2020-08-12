@@ -65,6 +65,34 @@ inline Vector4d random_unit_vector() {
 	return Vector4d(r*cos(a), r*sin(a), z,0);
 }
 
+inline Vector4d reflect(const Vector4d& v, const Vector4d& n) {
+	return v - 2 * v.dot(n)*n;
+}
+
+inline Vector4d random_in_unit_disk() {
+	while (true) {
+		auto p = Vector4d(random_double(-1, 1), random_double(-1, 1), 0,0);
+		if (p.norm()>= 1) continue;
+		return p;
+	}
+}
+
+Vector4d refract(const Vector4d& uv, const Vector4d& n, double eta) {
+	Vector3d N = n.head(3);
+	Vector3d L = uv.head(3);
+	double cosi = (-N).dot(L);
+	double cost2 = 1.0 - eta * eta*(1.0 - cosi * cosi);
+	Vector4d t = Vector4d::Zero();
+	t.head(3)= eta * L + (eta*cosi-sqrt(abs(cost2)))*N;
+	return t;
+}
+
+
+inline double schlick(double cosine, double ref_idx) {
+	auto r0 = (1 - ref_idx) / (1 + ref_idx);
+	r0 = r0 * r0;
+	return r0 + (1 - r0)*pow((1 - cosine), 5);
+}
 
 #endif // !__predefine_H__
 
