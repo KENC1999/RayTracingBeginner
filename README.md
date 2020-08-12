@@ -1,8 +1,8 @@
 # Ray Tracing in One Weekend 实践
 
-根据 [Ray Tracing in One Weekend ](https://raytracing.github.io/books/RayTracingInOneWeekend.html#dielectrics/schlickapproximation)教程实现了一个入门的光线追踪渲染器，最后完成的效果如下：
-!(https://github.com/KENC1999/RayTracingBeginner/blob/master/RayTrace/RayTrace/output6.png?raw=true)
-!(https://github.com/KENC1999/RayTracingBeginner/blob/master/RayTrace/RayTrace/output7.png)
+根据 [Ray Tracing in One Weekend ](https://raytracing.github.io/books/RayTracingInOneWeekend.html#dielectrics/schlickapproximation)教程实现了一个入门的光线追踪渲染器，使用的矩阵库为Eigen3，最后完成的效果如下：
+![img](https://github.com/KENC1999/RayTracingBeginner/blob/master/RayTrace/RayTrace/output6.png?raw=true)
+![img](https://github.com/KENC1999/RayTracingBeginner/blob/master/RayTrace/RayTrace/output7.png)
 
 由于原书步骤比较详细，而且很多大神已经写了这本书的笔记了，我就只挑重点内容和coding中的一些问题写一个简要的参考。
 
