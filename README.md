@@ -1,8 +1,8 @@
 # Ray Tracing in One Weekend 实践
 
 根据 [Ray Tracing in One Weekend ](https://raytracing.github.io/books/RayTracingInOneWeekend.html#dielectrics/schlickapproximation)教程实现了一个入门的光线追踪渲染器，最后完成的效果如下：
-
-
+!(https://github.com/KENC1999/RayTracingBeginner/blob/master/RayTrace/RayTrace/output6.png?raw=true)
+!(https://github.com/KENC1999/RayTracingBeginner/blob/master/RayTrace/RayTrace/output7.png)
 
 由于原书步骤比较详细，而且很多大神已经写了这本书的笔记了，我就只挑重点内容和coding中的一些问题写一个简要的参考。
 
@@ -199,4 +199,4 @@ Vector4d refract(const Vector4d& uv, const Vector4d& n, double eta) {
 
 ## 7 一些问题
 
-这个入门级别的光线追踪渲染器只按光线追踪的思想进行了初步的渲染，没有涉及辐射度量学和brdf的概念，未实现加速结构和并行化，以及相机中要手动调整的参数过多，某些角度透视有问题。目前打算先读一阵PBRT和RTR，之后结合OpenGL和Qt写一个交互性好一点的光线追踪渲染器。
+这个入门级别的光线追踪渲染器只按光线追踪的思想进行了初步的渲染，没有涉及辐射度量学和brdf的概念，未实现加速结构和并行化(渲染分辨率1000*562以上的图片就比较耗时了），以及相机中要手动调整的参数过多，某些角度透视有问题。目前打算先读一阵PBRT和RTR，之后结合OpenGL和Qt写一个交互性好一点的光线追踪渲染器。
